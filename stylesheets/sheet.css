@@ -1,0 +1,130 @@
+.title {
+	text-align: center;
+}
+
+#container {
+	display: flex;
+	flex-wrap: wrap-reverse;
+}
+
+/************ Event Component ************/
+#event {
+	width: 300px;
+	flex-grow: 1;
+	margin: 10px;
+}
+#event textarea {
+	width: 100%;
+	height: 300px;
+	resize: none;
+}
+#event .eventAttribute {
+	margin: 5px;
+	width: 100%;
+}
+#event .newButton {
+	float: left;
+}
+#event .saveButton {
+	float: right;
+}
+#event .deleteButton {
+	float: right;
+	background: red;
+}
+
+/************ Calendar Component ************/
+#calendar {
+	flex-grow: 100;
+	min-width: 768px;
+}
+#calendar button {
+	font-size: .5em;
+}
+#calendar .nextButton {
+	float: left;
+}
+#calendar .prevButton {
+	float: right;
+}
+#calendar .weekRow {
+	width: 100%;
+	display: flex;
+}
+#calendar .dayCol {
+	display: inline-block;
+	width: calc(100% / 7 - 6px);
+	float: left;
+}
+#calendar .weekdayTitle {
+	padding: 3px;
+}
+#calendar .monthTitle {
+	display: flex;
+	font-size: 3.5em;
+	flex: wrap;
+	justify-content: space-between;
+}
+#calendar .dayTitle {
+	display: none;
+}
+#calendar .day {
+	min-height: 100px;
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+}
+#calendar .weekend {
+	background: #eec;
+}
+#calendar .otherMonthDay {
+	background: #ccc;
+}
+#calendar .today {
+	background: #cce;
+}
+#calendar .dayNumber {
+	text-align: center;
+	float: right;
+	padding: 3px;
+	border-radius: 50%;
+	background: #000;
+	color: #fff;
+	width: 1.5em;
+}
+#calendar .calendar {
+	width: 100%;
+}
+#calendar .calendarBar {
+	width: 100%;
+}
+#calendar .calendarContent {
+	width: 100%;
+}
+
+/* Switch to single column when the views is too small */
+@media(max-width: 768px) {
+	#calendar {
+		min-width: initial;
+	}
+	#calendar .weekRow {
+		display: block;
+	}
+	#calendar .monthTitle {
+		font-size: 2em;
+	}
+	#calendar .dayCol {
+		display: block;
+		width: calc(100% - 6px);
+		float: none;
+	}
+	#calendar .weekdayTitle {
+		display: none;
+	}
+	#calendar .otherMonthDay {
+		display: none;
+	}
+	#calendar .dayTitle {
+		display: initial;
+	}
+}
